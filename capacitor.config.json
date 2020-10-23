@@ -1,0 +1,5 @@
+{
+  "appId": "com.serviciosocialotono.testaudio",
+  "appName": "Test audio",
+  "webDir": "./dist/test-audio"
+}
