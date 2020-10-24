@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Test audio</string>
+    <string name="title_activity_main">Test audio</string>
+    <string name="package_name">com.serviciosocialotono.testaudio</string>
+    <string name="custom_url_scheme">com.serviciosocialotono.testaudio</string>
+</resources>

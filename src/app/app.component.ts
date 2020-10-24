@@ -11,16 +11,28 @@ export class AppComponent {
   voices: SpeechSynthesisVoice[];
   synth: SpeechSynthesis;
 
-  ngOnInit() {
+  async ngOnInit() {
     this.synth = window.speechSynthesis;
-    setTimeout(() => {
-      this.voices = this.synth.getVoices();
-      this.utterTest = new SpeechSynthesisUtterance("Testing");
-      this.utterTest.voice = this.voices[48];
-      this.synth.speak(this.utterTest);
-      console.log(this.voices);
-    }, 10);
-    console.log(this.voices, this.synth);
-    // this.utterTest = new SpeechSynthesisUtterance("Testing");
+    this.voices = await this.setSpeech();
+    this.utterTest = new SpeechSynthesisUtterance("Testing");
+    this.utterTest.voice = this.voices[48];
   }
+
+  onClickVoice = () => {
+    this.synth.speak(this.utterTest);
+  };
+
+  setSpeech: () => Promise<SpeechSynthesisVoice[]> = () => {
+    return new Promise(function (resolve, reject) {
+      let synth = window.speechSynthesis;
+      let id;
+
+      id = setInterval(() => {
+        if (synth.getVoices().length !== 0) {
+          resolve(synth.getVoices());
+          clearInterval(id);
+        }
+      }, 10);
+    });
+  };
 }

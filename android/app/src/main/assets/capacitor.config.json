@@ -2,5 +2,5 @@
   "appId": "com.serviciosocialotono.testaudio",
   "appName": "Test audio",
   "webDir": "./dist/test-audio",
-  "linuxAndroidStudioPath": "/home/vic/android-studio/bin/studio.sh"
+  "linuxAndroidStudioPath": "~/android-studio/bin/studio.sh"
 }
