@@ -2,6 +2,7 @@
 
 # compiled output
 /ios
+/android
 /dist
 /tmp
 /out-tsc
